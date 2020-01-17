@@ -1,8 +1,5 @@
 apply plugin: 'groovy'
-apply plugin: 'maven'
-
 apply plugin: 'com.novoda.bintray-release'
-
 
 targetCompatibility = JavaVersion.VERSION_1_7
 sourceCompatibility = JavaVersion.VERSION_1_7
@@ -15,39 +12,11 @@ dependencies {
     implementation 'org.aspectj:aspectjrt:1.8.9'
 }
 
-repositories{
-    mavenCentral()
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            pom.groupId = 'com.tal100.aop'
-            pom.artifactId = 'gradle-android-plugin-yach-aop'
-            pom.version = '1.0.0'
-            repository(url: uri('../YachPlugin'))
-        }
-    }
-}
-
-def groupName = 'com.tal100.aop'//组名
-def artifactName = 'gradle-android-plugin-yach-aop'//项目名
-def versionName = '1.0.0'//版本号
-
 publish {
-    groupId = "${groupName}"
-    artifactId = "${artifactName}"
-    publishVersion = "${versionName}"
-
-    //项目描述
-    desc = 'AOP Plugin'
-    //项目网址，建议github开源库网址
-    website = 'https://github.com/jeanboy/Android-GradlePluginTest'
-    //bintray 的用户名
-    bintrayUser = 'liqy'
-    //bintray 用户名
-    userOrg = 'jeanboydev'
-    //API Key
-    bintrayKey = "59a4547cca90ab3bfb5281e1d371699cec4cfb41"
-    dryRun = false
+    userOrg = 'Yach'
+    groupId = 'com.tal100.aop'
+    artifactId = 'YachGradlePlugin'
+    publishVersion = '1.0.1'
+    desc = 'aop plugin'
+    website = 'https://github.com/liqy/YachGradlePlugin'
 }
